@@ -1,0 +1,78 @@
+services:
+    soubissacrifice.aboutme.listener:
+        class: soubissacrifice\aboutme\event\main_listener
+        arguments:
+            - @auth
+            - @cache
+            - @config
+            - @dbal.conn
+            - @request
+            - @template
+            - @user
+            - @controller.helper
+            - %core.root_path%
+            - %core.php_ext%
+            - %core.table_prefix%
+        tags:
+            - { name: event.listener }
+    soubissacrifice.aboutme.acplistener:
+        class: soubissacrifice\aboutme\event\acplistener
+        arguments:
+            - @auth
+            - @cache
+            - @config
+            - @dbal.conn
+            - @request
+            - @template
+            - @user
+            - @controller.helper
+            - %core.root_path%
+            - %core.php_ext%
+            - %core.table_prefix%
+        tags:
+            - { name: event.listener }
+    soubissacrifice.aboutme.ajaxify:
+        class: soubissacrifice\aboutme\controller\ajaxify
+        arguments:
+            - @auth
+            - @cache
+            - @config
+            - @dbal.conn
+            - @request
+            - @template
+            - @user
+            - @controller.helper
+            - @anavaro.postlove.notifyhelper
+            - %core.root_path%
+            - %core.php_ext%
+            - %core.table_prefix%
+    soubissacrifice.aboutme.notifyhelper:
+        class: soubissacrifice\aboutme\controller\notifyhelper
+        arguments:
+            - @config
+            - @dbal.conn
+            - @request
+            - @template
+            - @user
+            - @service_container
+            - %core.root_path%
+            - %core.php_ext%
+            - %core.table_prefix%
+    notification.type.aboutme:
+        class: soubissacrifice\aboutme\notification\aboutme
+        scope: prototype # scope MUST be prototype for this to work!
+        arguments:
+            - @user_loader
+            - @dbal.conn
+            - @cache.driver
+            - @user
+            - @auth
+            - @config
+            - @controller.helper
+            - %core.root_path%
+            - %core.php_ext%
+            - %tables.notification_types%
+            - %tables.notifications%
+            - %tables.user_notifications%
+        tags:
+            - { name: notification.type }
