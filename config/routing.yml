@@ -1,0 +1,5 @@
+aboutme_control:
+    path: /aboutme/{action}/{post}
+    defaults: { _controller: soubissacrifice.aboutme.ajaxify:base }
+    requirements:
+        post: \d+
