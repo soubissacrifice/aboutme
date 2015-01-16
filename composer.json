@@ -1,0 +1,31 @@
+{
+	"name": "soubissacrifice/aboutme",
+	"type": "phpbb-extension",
+	"description": "Adds support for about me profile field",
+	"homepage": "https://github.com/soubissacrifice/aboutme",
+	"version": "1.0.1",
+	"time": "2015-01-16",
+	"license": "GPL-2.0",
+	"authors": [
+		{
+			"name": "Desirae Held",
+			"email": "soubissacrifice@safirina.com",
+			"homepage": "http://safirina.com",
+			"role": "Lead Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.3"
+	},
+	"extra": {
+		"display-name": "phpBB 3.1 About Me",
+		"version-check": {
+			"host": "ipage.safirina.com",
+			"directory": "/phpbb-ext",
+			"filename": "aboutme.json"
+		},
+		"soft-require": {
+			"phpbb/phpbb": ">=3.1.0-RC2,<3.2.*@dev"
+		}
+	}
+}
