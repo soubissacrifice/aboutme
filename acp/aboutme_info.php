@@ -1,41 +1,37 @@
 <?php
 /**
 *
-* @package Safirina.com About Me
-* @copyright (c) 2014 SoubisSacrifice
-* @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
+* @package acp
+* @version $Id$
+* @copyright (c) 2005 phpBB Group
+* @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
 */
+
 /**
-* @ignore
+* @package module_install
 */
-namespace soubissacrifice\aboutme\acp;
-class aboutme_info
+class acp_aboutme_info
 {
 	function module()
 	{
 		return array(
-			'filename'	=> '\soubissacrifice\aboutme\acp\aboutme_module',
-			'title'		=> 'About Me',
-			'version'	=> '0.0.1',
+			'filename'	=> 'acp_aboutme',
+			'title'		=> 'ACP_BOARD_MANAGEMENT',
+			'version'	=> '1.0.0',
 			'modes'		=> array(
-				'add'		=> array(
-									'title' => 'ACP_ABOUT_ME_ADD',
-									'auth' 		=> 'ext_soubissacrifice/aboutme && acl_a_board',
-									'cat'		=> array('ACP_ABOUT_ME')
-									),
-				'edit'		=> array(
-									'title' => 'ACP_ABOUT_ME_EDIT',
-									'auth' 		=> 'ext_soubissacrifice/aboutme && acl_a_board',
-									'cat'		=> array('ACP_ABOUT_ME')
-									),
+				'aboutme'		=> array('title' => 'ACP_ABOUT_SETTINGS', 'auth' => 'acl_a_board', 'cat' => array('ACP_BOARD_CONFIGURATION')),
 			),
 		);
 	}
+
 	function install()
 	{
 	}
+
 	function uninstall()
 	{
 	}
 }
+
+?>
